@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "AddUser";
+}
+@using IOTMonthExamMVC.Models
+@model UserInfo
+<h2>AddUser</h2>
+
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>用户姓名</td>
+            <td>@Html.TextBoxFor(m => m.RealName)</td>
+        </tr>
+        <tr>
+            <td>用户账号</td>
+            <td>@Html.TextBoxFor(m => m.UName)</td>
+        </tr>
+        <tr>
+            <td>电话</td>
+            <td>@Html.TextBoxFor(m => m.Phone)</td>
+        </tr>
+        <tr>
+            <td>邮件</td>
+            <td>@Html.TextBoxFor(m => m.Email)</td>
+        </tr>
+        <tr>
+            <td>部门</td>
+            <td>@Html.DropDownListFor(m => m.ID, ViewBag.list as SelectList)</td>
+        </tr>
+        <tr>
+            <td>状态</td>
+            <td>
+                <input id="Radio1" name="state" type="radio" />启用
+                <input id="Radio2" name="state" type="radio" />禁用
+            </td>
+        </tr>
+        <tr>
+            <td><input id="Submit1" type="submit" value="添加" /></td>
+            <td><input id="Button1" type="button" value="取消" /></td>
+        </tr>
+    </table>
+}
+
+

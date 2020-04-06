@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "AddDepart";
+}
+@using IOTMonthExamMVC.Models
+@model Depart
+<h2>AddDepart</h2>
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>部门名称</td>
+            <td>@Html.TextBoxFor(q => q.Name)</td>
+        </tr>
+        <tr>
+            <td><input id="Submit1" type="submit" value="添加" /></td>
+            <td><input id="Button1" type="button" value="取消" /></td>
+        </tr>
+    </table>
+}

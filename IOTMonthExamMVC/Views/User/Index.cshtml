@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@using IOTMonthExamMVC.Models
+@model List<UserInfo>
+<h2>Index</h2>
+<input id="AddDepart" type="button" value="添加部门" onclick="location.href='/User/AddDepart'" />
+<input id="AddUser" type="button" value="添加员工" onclick="location.href='/User/AddUser'" />
+<input id="btnUser" type="button" value="管理员工" onclick="location.href='/User/SelUser'" />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>员工编号</td>
+            <td>员工账号</td>
+            <td>员工姓名</td>
+            <td>电话</td>
+            <td>邮件</td>
+            <td>部门</td>
+            <td>状态</td>
+            <td>操作</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (UserInfo item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.UName</td>
+                <td>@item.RealName</td>
+                <td>@item.Phone</td>
+                <td>@item.Email</td>
+                <td>@item.Name</td>
+                <td>@(Convert.ToBoolean(item.Status)?"启用":"禁用")</td>                                  
+                <td>@Html.ActionLink("删除", "Del", new { @id = item.ID })</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

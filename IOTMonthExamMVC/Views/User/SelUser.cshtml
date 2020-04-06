@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "SelUser";
+}
+@using IOTMonthExamMVC.Models
+@model Depart
+<h2>SelUser</h2>
+@using (Html.BeginForm())
+{
+    <span>部门：</span>@Html.DropDownListFor(m => m.ID, ViewBag.list as SelectList)
+    <span>姓名：</span><input id="txtName" type="text" />
+    <input id="Submit1" type="submit" value="查询" />
+}
+
+
